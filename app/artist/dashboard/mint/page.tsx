@@ -17,7 +17,7 @@ const MintNFTForm = () => {
       if (selectedFile.type === "audio/mpeg") {
         setFile(selectedFile);
       } else {
-        alert("Only MP3 files are allowed.");
+        alert("Only MP3 files are allowed."); 
       }
     }
   };
