@@ -33,14 +33,14 @@ const Dashboard = () => {
               alt="pfp"
               width={200}
               height={200}
-              className="rounded-full"
+              className="rounded-full my-2"
             />
             {isEditing ? (
               <input
                 type="text"
                 value={profileName}
                 onChange={(e) => setProfileName(e.target.value)}
-                className="mt-2 text-xl font-bold text-center  focus:outline-none"
+                className="text-xl font-bold text-center  focus:outline-none"
               />
             ) : (
               <h2 className="text-xl font-bold">{profileName}</h2>
@@ -50,13 +50,13 @@ const Dashboard = () => {
                 type="text"
                 value={profileBio}
                 onChange={(e) => setProfileBio(e.target.value)}
-                className="mt-1 text-gray-800 text-center  focus:outline-none"
+                className="text-gray-800 text-center  focus:outline-none"
               />
             ) : (
               <p className="text-gray-800">{profileBio}</p>
             )}
             <button
-              className="mt-4 px-4 py-2 bg-black text-white rounded-md"
+              className="mt-4 px-4 py-2 cursor-pointer bg-black text-white rounded-md"
               onClick={isEditing ? saveProfile : toggleEdit}
             >
               {isEditing ? "Save" : "Edit Profile"}
