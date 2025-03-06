@@ -17,7 +17,11 @@ const MintNFTForm = () => {
       if (selectedFile.type === "image/jpeg" || selectedFile.type === "image/png") {
         setFile(selectedFile);
       } else {
+<<<<<<< HEAD
         alert("Only JPG and PNG files are allowed.");
+=======
+        alert("Only MP3 files are allowed."); 
+>>>>>>> a6b8c387cad7ae491001bc953eed2f7f72d5185e
       }
     }
   };
