@@ -1,7 +1,8 @@
 import { ethers } from "ethers";
 
+import { getWalletAddress } from '../components/Navbar';
 // Replace with your deployed contract address
-const contractAddress = "YOUR_DEPLOYED_CONTRACT_ADDRESS";
+const contractAddress = getWalletAddress;
 
 // Contract ABI (Replace if necessary)
 const contractABI = [
