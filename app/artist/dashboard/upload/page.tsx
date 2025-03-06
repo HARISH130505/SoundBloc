@@ -2,6 +2,7 @@
 
 import { ChangeEvent, SetStateAction, useState } from 'react';
 import { Upload } from 'lucide-react';
+import Navbar from '@/app/component/Navbar';
 
 export default function UploadTrack() {
   const [title, setTitle] = useState('');
@@ -18,6 +19,8 @@ export default function UploadTrack() {
   };
 
   return (
+    <div>
+    <Navbar/>
     <div className="flex justify-center items-center p-10">
     <div className="max-w-lg mx-auto bg-[rgba(255,255,255,0.6)] p-6 rounded-lg shadow-md">
       <h2 className="text-xl font-semibold mb-4">Upload Track</h2>
@@ -63,6 +66,7 @@ export default function UploadTrack() {
         <button className="px-4 py-2 bg-black text-white rounded">Cancel</button>
         <button className="px-4 py-2 bg-black text-white rounded">Upload Track</button>
       </div>
+    </div>
     </div>
     </div>
   );

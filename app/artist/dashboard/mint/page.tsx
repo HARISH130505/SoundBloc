@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react";
 import { Upload } from "lucide-react";
+import Navbar from "@/app/component/Navbar";
 
 const MintNFTForm = () => {
   const [track, setTrack] = useState("Crypto Beats");
@@ -26,6 +27,8 @@ const MintNFTForm = () => {
   };
 
   return (
+    <div>
+    <Navbar/>
     <div className="flex justify-center items-center p-10">
     <div className="max-w-md mx-auto p-6 bg-[rgba(255,255,255,0.6)] rounded-lg shadow-md">
       <h2 className="text-xl font-bold text-center mb-2">Mint NFT</h2>
@@ -62,6 +65,7 @@ const MintNFTForm = () => {
         <button className="px-4 py-2 rounded bg-black text-white text-sm">Cancel</button>
         <button onClick={handleSubmit} className="px-4 py-2 rounded bg-black text-white text-sm">Mint NFT</button>
       </div>
+    </div>
     </div>
     </div>
   );

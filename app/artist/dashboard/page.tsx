@@ -3,6 +3,7 @@ import { BarChart, Bitcoin, Upload, Play, MoreVertical } from "lucide-react";
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Navbar from "@/app/component/Navbar";
 
 const Dashboard = () => {
   const [isEditing, setIsEditing] = useState(false);
@@ -24,7 +25,9 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="min-h-screen p-6">
+    <div>
+    <Navbar/>
+    <div className="min-h-screen p-6 ">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="bg-[rgba(255,255,255,0.6)] p-6 rounded-lg shadow-md">
           <div className="flex flex-col items-center">
@@ -171,6 +174,7 @@ const Dashboard = () => {
           </tbody>
         </table>
       </div>
+    </div>
     </div>
   );
 };
