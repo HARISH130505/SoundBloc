@@ -1,10 +1,22 @@
 'use client';
 import { BarChart, Bitcoin, Upload, Play, MoreVertical } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 const Dashboard = () => {
+  const [isEditing, setIsEditing] = useState(false);
+  const [profileName, setProfileName] = useState("DJ Crypto");
+  const [profileBio, setProfileBio] = useState("Electronic Music Producer");
+
+  const toggleEdit = () => {
+    setIsEditing(!isEditing);
+  };
+
+  const saveProfile = () => {
+    setIsEditing(false);
+  };
+
   const scrollToAnalytics = () => {
     const analyticsSection = document.getElementById("analytics-section");
     if (analyticsSection) {
@@ -24,10 +36,31 @@ const Dashboard = () => {
               height={200}
               className="rounded-full"
             />
-            <h2 className="text-xl font-bold">DJ Crypto</h2>
-            <p className="text-gray-800">Electronic Music Producer</p>
-            <button className="mt-4 px-4 py-2 bg-black text-white rounded-md">
-              Edit Profile
+            {isEditing ? (
+              <input
+                type="text"
+                value={profileName}
+                onChange={(e) => setProfileName(e.target.value)}
+                className="mt-2 text-xl font-bold text-center  focus:outline-none"
+              />
+            ) : (
+              <h2 className="text-xl font-bold">{profileName}</h2>
+            )}
+            {isEditing ? (
+              <input
+                type="text"
+                value={profileBio}
+                onChange={(e) => setProfileBio(e.target.value)}
+                className="mt-1 text-gray-800 text-center  focus:outline-none"
+              />
+            ) : (
+              <p className="text-gray-800">{profileBio}</p>
+            )}
+            <button
+              className="mt-4 px-4 py-2 bg-black text-white rounded-md"
+              onClick={isEditing ? saveProfile : toggleEdit}
+            >
+              {isEditing ? "Save" : "Edit Profile"}
             </button>
           </div>
           <div className="mt-4 flex justify-around text-center">
@@ -143,4 +176,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Dashboard; 
