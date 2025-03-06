@@ -5,6 +5,17 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Dashboard = () => {
+  const [isEditing, setIsEditing] = useState(false);
+  const [profileName, setProfileName] = useState("DJ Crypto");
+  const [profileBio, setProfileBio] = useState("Electronic Music Producer");
+
+  const toggleEdit = () => {
+    setIsEditing(!isEditing);
+  };
+
+  const saveProfile = () => {
+    setIsEditing(false);
+  };
   const scrollToAnalytics = () => {
     const analyticsSection = document.getElementById("analytics-section");
     if (analyticsSection) {
