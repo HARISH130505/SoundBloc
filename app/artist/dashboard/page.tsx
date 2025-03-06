@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const Dashboard = () => {
+const page = () => {
   const scrollToAnalytics = () => {
     const analyticsSection = document.getElementById("analytics-section");
     if (analyticsSection) {
@@ -143,4 +143,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default page;
