@@ -14,10 +14,10 @@ const MintNFTForm = () => {
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files) {
       const selectedFile = event.target.files[0];
-      if (selectedFile.type === "audio/mpeg") {
+      if (selectedFile.type === "image/jpeg" || selectedFile.type === "image/png") {
         setFile(selectedFile);
       } else {
-        alert("Only MP3 files are allowed.");
+        alert("Only JPG and PNG files are allowed.");
       }
     }
   };
@@ -50,13 +50,13 @@ const MintNFTForm = () => {
       <label className="block text-sm font-medium">Description</label>
       <textarea value={description} onChange={(e) => setDescription(e.target.value)} className="w-full bg-white p-2 border rounded mb-3 h-20" />
       
-      <label className="block text-sm font-medium">Upload MP3</label>
+      <label className="block text-sm font-medium">Upload Image</label>
       <div className="bg-white rounded-lg p-4 text-center bg-whitemb-4">
-        <input type="file" accept="audio/mpeg" onChange={handleFileChange} className="hidden" id="file-upload" />
+        <input type="file" accept="image/jpeg, image/png" onChange={handleFileChange} className="hidden" id="file-upload" />
         <label htmlFor="file-upload" className="cursor-pointer flex flex-col items-center">
           <Upload className="w-7 h-7 text-gray-500" />
           <span className="text-sm text-gray-600">Click to upload or drag and drop</span>
-          <span className="text-xs text-gray-400">MP3 files only</span>
+          <span className="text-xs text-gray-400">JPG or PNG files only</span>
         </label>
         {file && <p className="text-sm mt-2 text-gray-800">Selected: {file.name}</p>}
       </div>
