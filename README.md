@@ -1,6 +1,6 @@
-# Sample Hardhat Project
+# SOUNDBLOC - Empowering Musicians, Redefining Music Ownership
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+## Hardhat Setup
 
 Try running some of the following tasks:
 
@@ -13,7 +13,7 @@ npx hardhat ignition deploy ./ignition/modules/Lock.js
 ```
 
 
-## Sample NextJs Project
+## NextJs Setup
 
 First, run the development server:
 
