@@ -1,0 +1,50 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+contract MintNFT is ERC721URIStorage, Ownable {
+    uint256 private _tokenIdCounter;
+
+    constructor() ERC721("MyNFT", "MNFT") Ownable(msg.sender) {
+        _tokenIdCounter = 0; // Explicitly initializing the counter
+    }
+
+    function mintNFT(string memory tokenURI) public returns (uint256) {
+        _tokenIdCounter++;
+        uint256 newTokenId = _tokenIdCounter;
+
+        _safeMint(msg.sender, newTokenId);
+        _setTokenURI(newTokenId, tokenURI);
+
+        return newTokenId;
+    }
+}
+
+
+&&&
+
+
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
+
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+contract MyNFT is ERC721URIStorage, Ownable {
+    uint256 private _tokenIds;
+
+    // Pass msg.sender to Ownable constructor
+    constructor() ERC721("MyNFT", "MNFT") Ownable(msg.sender) {}
+
+    function mintNFT(address recipient, string memory tokenURI) public onlyOwner returns (uint256) {
+        _tokenIds++;
+        uint256 newItemId = _tokenIds;
+
+        _mint(recipient, newItemId);
+        _setTokenURI(newItemId, tokenURI);
+
+        return newItemId;
+    }
+}
