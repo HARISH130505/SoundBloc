@@ -12,7 +12,6 @@ npx hardhat node
 npx hardhat ignition deploy ./ignition/modules/Lock.js
 ```
 
-
 ## NextJs Setup
 
 First, run the development server:
