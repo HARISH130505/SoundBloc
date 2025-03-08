@@ -24,7 +24,9 @@ const MintNFTForm = () => {
 
   const handleSubmit = () => {
     console.log({ track, nftName, editions, price, description, file });
+    alert("NFT Minted Succesfully")
   };
+
 
   return (
     <div>
@@ -62,8 +64,8 @@ const MintNFTForm = () => {
       </div>
 
       <div className="flex justify-between py-4">
-        <button className="px-4 py-2 rounded bg-black text-white text-sm">Cancel</button>
-        <button onClick={handleSubmit} className="px-4 py-2 rounded bg-black text-white text-sm">Mint NFT</button>
+        <button className="px-4 py-2 rounded bg-black text-white text-sm cursor-pointer">Cancel</button>
+        <button onClick={handleSubmit} className="px-4 py-2 rounded bg-black text-white text-sm cursor-pointer">Mint NFT</button>
       </div>
     </div>
     </div>

@@ -132,7 +132,7 @@ export default function UploadTrack() {
               <p className="text-xs text-gray-400">MP3, WAV or FLAC (Max 50MB)</p>
             </label>
           </div>
-          {trackFileUrl ? <p className="text-sm text-green-600 text-center">Uploaded: {trackFileUrl}</p> : <p className="text-sm text-red-600 text-center">No track uploaded</p>}
+          {trackFileUrl ? <p className="text-sm text-green-600 text-center">Uploaded: {trackFileUrl}</p> : ""}
 
           {/* Cover Art Upload */}
           <label className="block text-sm font-medium">Cover Art</label>
@@ -144,7 +144,7 @@ export default function UploadTrack() {
               <p className="text-xs text-gray-400">PNG, JPG or GIF (Max 5MB)</p>
             </label>
           </div>
-          {coverArtUrl ? <p className="text-sm text-green-600 text-center">Uploaded: {coverArtUrl}</p> : <p className="text-sm text-red-600 text-center">No image uploaded</p>}
+          {coverArtUrl ? <p className="text-sm text-green-600 text-center">Uploaded: {coverArtUrl}</p> : ""}
 
           {/* Upload Buttons */}
           <div className="flex justify-between mt-4">
